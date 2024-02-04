@@ -1,9 +1,12 @@
 body{
 	color:#5c6492;
-	background-image: none;
+	background-image: url("../imagens/1070857.png");
 	font:700 20px/18px 'Open Sans',sans-serif;
 	margin-top: 5px;
 	margin-bottom: 5px;
+	background-attachment: fixed; 
+  	background-size: cover; 
+  	background-position: center;
 }
 *,:after,:before{box-sizing:border-box}
 .clearfix:after,.clearfix:before{content:'';display:table}
