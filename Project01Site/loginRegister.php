@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <title>Login</title>
-        <!-- Required meta tags -->
+        
         <meta charset="utf-8" />
         <meta
             name="viewport"
@@ -40,11 +40,11 @@
                 <div class="login-form">
                     <div class="sign-in-htm">
                         <div class="group">
-                            <label for="user" class="label">Username</label>
+                            <label for="username" class="label">Username</label>
                             <input id="user" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Password</label>
+                            <label for="password" class="label">Password</label>
                             <input id="pass" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
@@ -60,6 +60,17 @@
                         </div>
                     </div>
                     <div class="sign-up-htm">
+
+                    <?php
+                        include("config.php");
+                        if(isset($_POST["submit"]))
+                        {
+                            $username=$_POST['username'];
+                            $email=$_POST['email'];
+                            $password=$_POST['password'];
+                         }
+            
+                    ?>
                         <div class="group">
                             <label for="user" class="label">Username</label>
                             <input id="user" type="text" class="input">
