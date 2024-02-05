@@ -72,20 +72,20 @@
             
                     ?>
                         <div class="group">
-                            <label for="user" class="label">Username</label>
+                            <label for="username" class="label">Username</label>
                             <input id="user" type="text" class="input">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="password" class="label">Password</label>
+                            <input id="password" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Repeat Password</label>
-                            <input id="pass" type="password" class="input" data-type="password">
+                            <label for="password" class="label">Repeat Password</label>
+                            <input id="password" type="password" class="input" data-type="password">
                         </div>
                         <div class="group">
-                            <label for="pass" class="label">Email Address</label>
-                            <input id="pass" type="text" class="input">
+                            <label for="email" class="label">Email Address</label>
+                            <input id="emai" type="text" class="input">
                         </div>
                         <div class="group">
                             <input type="submit" class="button" value="Sign Up">
