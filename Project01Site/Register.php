@@ -1,117 +1,113 @@
 <?php
-    require 'config.php';
+require 'config.php';
 
-    if(isset($_POST['submit'])){
-    $username=$_POST['username'];
-    $email=$_POST['email'];
-    $password=$_POST['password'];
-    $confirmpassword=$_POST['password'];
-    $duplicate= mysqli_query($conn,"SELECT * FROM cliente WHERE username = '$username' OR email = '$email'");
-    if(mysqli_num_rows($duplicate)>0){
-         echo
-         "<script> alert('Username or Email já estoa a ser usados'); </script>";
-    }
-    else{
-        if($password==$confirmpassword){
-            $query="INSERT INTO cliente VALUES('','$username','$email','$password')";
-            mysqli_query($conn,$query);
-            echo 
+if (isset($_POST['submit'])) {
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $confirmpassword = $_POST['password'];
+    $duplicate = mysqli_query($conn, "SELECT * FROM cliente WHERE username = '$username' OR email = '$email'");
+    if (mysqli_num_rows($duplicate) > 0) {
+        echo
+        "<script> alert('Username or Email já estoa a ser usados'); </script>";
+    } else {
+        if ($password == $confirmpassword) {
+            $query = "INSERT INTO cliente VALUES('','$username','$email','$password')";
+            mysqli_query($conn, $query);
+            echo
             "<script> alert('Registo com sucesso'); </script>";
-        }
-        else{
-            echo 
+        } else {
+            echo
             "<script> alert('Password não é igual a inserida anterioirmente'); </script>";
         }
     }
-       
-    }
+}
 ?>
 
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <title>Register</title>
-        
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
 
-        
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-            
-        />
+<head>
+    <title>Register</title>
 
-        <link href="css/login.css" rel="stylesheet" type="text/css" />
-    </head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">CarDreamer</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Home</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-                    <section>
-                        <div class="mask d-flex align-items-center h-100 gradient-custom-3">
-                            <div class="container h-100">
-                            <div class="row d-flex justify-content-center align-items-center h-100">
-                                <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-                                <div class="card" style="border-radius: 15px; background-color:dimgrey">
-                                    <div class="card-body p-5">
-                                    <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-                                    <form method="post">
 
-                                        <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example1cg" >Your Name</label>
-                                        <input type="text" id="username" class="form-control form-control-lg"name="username" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link href="css/Register.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <section class="vh-100" style="background-color:gray;">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-lg-12 col-xl-11">
+                    <div class="card text-black" style="border-radius: 25px;">
+                        <div class="card-body p-md-5">
+                            <div class="row justify-content-center">
+                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
+
+                                    <form class="mx-1 mx-md-4">
+
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label for="username">Username</label>
+                                                <input class="form-control" type="text" name="username" id="username" required />
+                                            </div>
                                         </div>
 
-                                        <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example3cg">Your Email</label>
-                                        <input type="email" id="email" class="form-control form-control-lg"name="email" />  
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label for="email">Email</label>
+                                                <input class="form-control" type="text" name="email" id="email" required />
+                                            </div>
                                         </div>
 
-                                        <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cg" >Password</label>
-                                        <input type="password" id="password" class="form-control form-control-lg" name="password">
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+
+                                                <label for="password">Password</label>
+                                                <input class="form-control" type="password" name="password" id="password" required />
+                                            </div>
                                         </div>
 
-                                        <div class="form-outline mb-4">
-                                        <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                                        <input type="password" id="confirmpassword" class="form-control form-control-lg" name="confirmpassword" />
+                                        <div class="d-flex flex-row align-items-center mb-4">
+                                            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                                            <div class="form-outline flex-fill mb-0">
+                                                <label for="passwordRepeat">Repeat Password</label>
+                                                <input class="form-control" type="password" name="confirmpassword" id="confirmpassword" required />
+                                            </div>
                                         </div>
 
-                                        <div class="d-flex justify-content-center">
-                                        <button type="submit" class="btn btn-dark" name="submit">Register</button>
+                                        <div class="form-check d-flex justify-content-center mb-5">
+                                                 <a href="Login.php">Já tem uma conta</a>
                                         </div>
 
-                                        <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                                            class="fw-bold text-body"><u>Login here</u></a></p>
+                                        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                                            <button type="submit" class="btn btn-dark btn-lg">Register</button>
+                                        </div>
 
                                     </form>
 
-                                    </div>
                                 </div>
+                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                                    <img src="imagens/wp10500951.webp" alt="" class="FIT" width="600" height="600">
                                 </div>
-                            </div>
                             </div>
                         </div>
-                        </section>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+</body>
+
 </html>

@@ -1,0 +1,28 @@
+.FIT{
+	background-attachment: fixed; 
+  	background-size: cover; 
+  	background-position: center;
+	height: fit-content;
+}
+
+
+
+.iconLR{
+    width: 8%;
+    height: 8%;
+    display: flex;
+    float: left;
+}
+
+hr.LR{
+    border-top: 2px solid #116A90;
+}
+
+.tpl{
+    margin-top: 2%;
+    width: 90%;
+    color: black;
+    display: block;
+    border: 2px solid;
+    padding-right: 10%;
+}
