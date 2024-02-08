@@ -59,7 +59,7 @@ require 'phpconfig/config.php';
                 ?>
                         <div class="card h-100">
                             <!-- Product image -->
-                            <img class="card-img-top" src="<?php echo $row['imagem']; ?>" alt="" />
+                            <img class="card-img-top" src="imagens/<?php echo $row['imagem']; ?>" alt="" />
                             <!-- Product details -->
                             <div class="card-body p-4">
                                 <div class="text-center">

@@ -104,17 +104,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.Blocos{
-  display: inline-block; 
-  width: 150px; 
-  height: 200px; 
-  border: 1px solid; 
-  background-color: #f1f1f1; 
-  border-radius: 2px;
-  margin: 5px; 
-  text-align: center;
-  
-}
+
 
 .BMW{
   background-image: url(imagens/BMW-E60-M5-Rear-View.jpg);
