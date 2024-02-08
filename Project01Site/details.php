@@ -20,6 +20,8 @@ if (isset($_GET['id'])) {
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
             <link href="css/styles.css" rel="stylesheet" />
             <title>Detalhes do Carro</title>
         </head>
@@ -42,20 +44,28 @@ if (isset($_GET['id'])) {
                 </div>
             </nav>
             <div class="container">
-                <h1>Detalhes do Carro</h1>
-                <div>
-                    <h1><?php echo $car['Marca']; ?></h1>
-                    <h2><?php echo $car['Modelo']; ?></h2>
-                    <p>Preço: <?php echo $car['Preco']; ?>€</p>
-                    <p>Ano: <?php echo $car['Ano']; ?> </p>
-                    <p>Kilometragem: <?php echo $car['kilometragem']; ?> </p>
-                    <p>Combustivel: <?php echo $car['combustivel']; ?></p>
-                    <p>Cavalagem: <?php echo $car['cavalagem']; ?></p>
-                    <p>Cilindrada: <?php echo $car['cilindrada']; ?></p>
-                    <p>Tipo de caixa: <?php echo $car['tipo_de_caixa']; ?></p>
-                    <p>Tracção: <?php echo $car['tracção']; ?></p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <img class="card-img-top IMG" src="imagens/<?php echo $car['imagem']; ?>" />
+                    </div>
+                    <div class="col-md-6">
+                        <h1>Detalhes do Carro</h1>
+                        <div>
+                            <h1><?php echo $car['Marca']; ?></h1>
+                            <h2><?php echo $car['Modelo']; ?></h2>
+                            <p>Preço: <?php echo $car['Preco']; ?>€</p>
+                            <p>Ano: <?php echo $car['Ano']; ?> </p>
+                            <p>Kilometragem: <?php echo $car['kilometragem']; ?> </p>
+                            <p>Combustivel: <?php echo $car['combustivel']; ?></p>
+                            <p>Cavalagem: <?php echo $car['cavalagem']; ?></p>
+                            <p>Cilindrada: <?php echo $car['cilindrada']; ?></p>
+                            <p>Tipo de caixa: <?php echo $car['tipo_de_caixa']; ?></p>
+                            <p>Tracção: <?php echo $car['tracção']; ?></p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
         </body>
 
         </html>
