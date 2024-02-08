@@ -71,7 +71,7 @@ require 'phpconfig/config.php';
                                     </div>
                                     <!-- Product actions -->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">More details</a></div>
+                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="details.php?id=<?php echo $row["id"]; ?>">More details</a></div>
                                     </div>
                                 </div>
                             </form>
