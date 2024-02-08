@@ -49,10 +49,8 @@ if (isset($_GET['id'])) {
                         <img class="card-img-top IMG" src="imagens/<?php echo $car['imagem']; ?>" />
                     </div>
                     <div class="col-md-6">
-                        <h1>Detalhes do Carro</h1>
                         <div>
-                            <h1><?php echo $car['Marca']; ?></h1>
-                            <h2><?php echo $car['Modelo']; ?></h2>
+                            <h1> <?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h1>
                             <p>Preço: <?php echo $car['Preco']; ?>€</p>
                             <p>Ano: <?php echo $car['Ano']; ?> </p>
                             <p>Kilometragem: <?php echo $car['kilometragem']; ?> </p>
