@@ -1,8 +1,7 @@
 
 <?php
-
-$con = mysqli_connect("localhost","root","","projeto01")or die("Connection Error");
-
+    session_start();
+    $conn = mysqli_connect("localhost","root","","projeto01")or die("Connection Error");
 
 ?>
 
