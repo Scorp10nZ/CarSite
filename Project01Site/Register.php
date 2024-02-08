@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'phpconfig/config.php';
 
 if (isset($_POST['submit'])) {
     $username = $_POST['username'];

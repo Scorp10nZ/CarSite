@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'phpconfig/config.php';
 if(isset($_POST["submit"])){
     $username=$_POST["username"];
     $password=$_POST["password"];
@@ -9,7 +9,7 @@ if(isset($_POST["submit"])){
         if($password==$row["password"]){
             $_SESSION["login"]=true;
             $_SESSION["id"]=$row["id"];
-            header("Location: index.html");
+            header("Location: index.php");
         }
         else{
             echo
