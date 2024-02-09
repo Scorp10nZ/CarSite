@@ -26,8 +26,8 @@ if (isset($_GET['id'])) {
             <title>Detalhes do Carro</title>
         </head>
 
-        <body style="background-color:#f1f1f1;">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <body style="background-color:lightslategray">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container px-4 px-lg-5">
                     <a class="navbar-brand" href="#!">CarDreamer</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -43,28 +43,42 @@ if (isset($_GET['id'])) {
                     </div>
                 </div>
             </nav>
-            <div class="container">
+            <div class="container ">
                 <div class="row">
-                    <div class="col-md-6">
-                        <img class="card-img-top IMG" src="imagens/<?php echo $car['imagem']; ?>" />
+                    <div class="col-md-6 " style="margin-top: 2%">
+                        <h2 style="color: white; padding-left:25%"> <?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h2>
+                        <img class="card-img-top IMG rounded" style="margin-top: 2%" src="imagens/<?php echo $car['imagem']; ?>" />
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-3" style="margin-top: 13% ;">
                         <div>
-                            <h1> <?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h1>
-                            <p>Preço: <?php echo $car['Preco']; ?>€</p>
-                            <p>Ano: <?php echo $car['Ano']; ?> </p>
-                            <p>Kilometragem: <?php echo $car['kilometragem']; ?> </p>
-                            <p>Combustivel: <?php echo $car['combustivel']; ?></p>
-                            <p>Cavalagem: <?php echo $car['cavalagem']; ?></p>
-                            <p>Cilindrada: <?php echo $car['cilindrada']; ?></p>
-                            <p>Tipo de caixa: <?php echo $car['tipo_de_caixa']; ?></p>
-                            <p>Tracção: <?php echo $car['tracção']; ?></p>
+                            <div style="margin-top: 30% ;color: white;">
+                                <h6><strong>Preço:</strong> <?php echo $car['Preco']; ?>€</h6>
+                                <h6><strong>Ano:</strong> <?php echo $car['Ano']; ?> </h6>
+                                <h6><strong>Kilometragem:</strong> <?php echo $car['kilometragem']; ?> km</h6>
+                                <h6><strong>Combustivel:</strong> <?php echo $car['combustivel']; ?></h6>
+                            </div>
+                            <div style="margin-top: 25%">
+                                <button type="button" class="btn btn-secondary btn-lg">Contatar Vendedor</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3" style="margin-top: 20%">
+                        <div style="color: white;">
+                            <h6><strong>Cavalagem:</strong> <?php echo $car['cavalagem']; ?>hp</h6>
+                            <h6><strong>Cilindragem:</strong> <?php echo $car['cilindrada']; ?>cc</h6>
+                            <h6><strong>Tipo de caixa:</strong> <?php echo $car['tipo_de_caixa']; ?></h6>
+                            <h6><strong>Tracção:</strong> <?php echo $car['tracção']; ?></h6>
                         </div>
                     </div>
                 </div>
             </div>
 
         </body>
+        <footer class="py-3 bg-dark" style="margin-top: 4%" >
+            <div class="container">
+                <p class="m-0 text-center text-white">Copyright &copy; Your Website 2023</p>
+            </div>
+        </footer>
 
         </html>
 
