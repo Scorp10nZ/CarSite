@@ -46,31 +46,31 @@ if (isset($_GET['id'])) {
                 <div class="row">
                     <div class="col-md-6" style="margin-top: 2%;">
                         <h2 style="color: white; padding-left:25%"> <?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h2>
-                        <img class="rounded" style="margin-top: 2% ; width:100%" height="100%" src="imagens/<?php echo $car['imagem']; ?>" />
+                        <img class="rounded" style="margin-top: 2% ; width:90%" height="90%" src="imagens/<?php echo $car['imagem']; ?>" />
                     </div>
-                    <div class="col-md-3" style="margin-top: 13% ;">
+                    <div class="col-md-3" style="margin-top: 5% ;">
                         <div>
                             <div style="margin-top: 30% ;color: white;">
-                                <h6><strong>Preço:</strong> <?php echo $car['Preco']; ?>€</h6>
-                                <h6><strong>Ano:</strong> <?php echo $car['Ano']; ?> </h6>
-                                <h6><strong>Kilometragem:</strong> <?php echo $car['kilometragem']; ?> km</h6>
-                                <h6><strong>Combustivel:</strong> <?php echo $car['combustivel']; ?></h6>
-                            </div>
-                            <div style="margin-top: 25%">
-                                <button type="button" class="btn btn-secondary btn-lg">Contatar Vendedor</button>
+                                <h5><strong>Preço:</strong> <?php echo $car['Preco']; ?>€</h5>
+                                <h5><strong>Ano:</strong> <?php echo $car['Ano']; ?> </h5>
+                                <h5><strong>Kilometragem:</strong> <?php echo $car['kilometragem']; ?> km</h5>
+                                <h5><strong>Combustivel:</strong> <?php echo $car['combustivel']; ?></h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3" style="margin-top: 20%">
+                    <div class="col-md-3" style="margin-top: 12%">
                         <div style="color: white;">
-                            <h6><strong>Cavalagem:</strong> <?php echo $car['cavalagem']; ?>hp</h6>
-                            <h6><strong>Cilindragem:</strong> <?php echo $car['cilindrada']; ?>cc</h6>
-                            <h6><strong>Tipo de caixa:</strong> <?php echo $car['tipo_de_caixa']; ?></h6>
-                            <h6><strong>Tracção:</strong> <?php echo $car['tracção']; ?></h6>
+                            <h5><strong>Cavalagem:</strong> <?php echo $car['cavalagem']; ?>hp</h5>
+                            <h5><strong>Cilindragem:</strong> <?php echo $car['cilindrada']; ?>cc</h5>
+                            <h5><strong>Tipo de caixa:</strong> <?php echo $car['tipo_de_caixa']; ?></h5>
+                            <h5><strong>Tracção:</strong> <?php echo $car['tracção']; ?></h5>
                         </div>
                     </div>
                 </div>
             </div>
+            <div style="margin-left: 60%; margin: botton 10%;" >
+                                <button type="button" class="btn btn-secondary btn-lg">Contatar Vendedor</button>
+                    </div>
             <div class="py-3 bg-dark" style="margin-top: 10% ;color:white">
                 <h3 class="m-0 text-center">Mais Anuncios</h3>
                 <section class="py-5">
