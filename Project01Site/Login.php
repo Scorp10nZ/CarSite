@@ -10,7 +10,7 @@ if(isset($_POST["submit"])){
             $_SESSION["login"]=true;
             $_SESSION["id"]=$row["id"];
             $_SESSION["username"] = $username;
-            header("Location: index2");
+            header("Location: index2.php?username=$username");
         }
         else{
             echo
