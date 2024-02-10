@@ -45,9 +45,9 @@ if (isset($_GET['id'])) {
             </nav>
             <div class="container ">
                 <div class="row">
-                    <div class="col-md-6 " style="margin-top: 2%">
+                    <div class="col-md-6" style="margin-top: 2%;">
                         <h2 style="color: white; padding-left:25%"> <?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h2>
-                        <img class="card-img-top IMG rounded" style="margin-top: 2%" src="imagens/<?php echo $car['imagem']; ?>" />
+                        <img class="rounded" style="margin-top: 2% ; width:100%" height="100%" src="imagens/<?php echo $car['imagem']; ?>" />
                     </div>
                     <div class="col-md-3" style="margin-top: 13% ;">
                         <div>
@@ -78,7 +78,7 @@ if (isset($_GET['id'])) {
                     <div class="container px-4 px-lg-5 mt-5">
                         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                             <?php
-                            $query = "SELECT * FROM carros WHERE id!=$car_id";
+                            $query = "SELECT * FROM carros WHERE id!=$car_id ORDER BY RAND()";
                             $result = mysqli_query($conn, $query);
                             $count = 0;
                             if (mysqli_num_rows($result) > 0 ) {

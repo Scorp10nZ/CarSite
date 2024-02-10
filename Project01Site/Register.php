@@ -41,16 +41,19 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <section class="vh-100" style="background-color:gray;">
-        <div class="container h-100">
+    <section class="vh-100" style="background-image: url(../Project01Site/imagens/W.jpg);  
+                                    background-position: center; 
+                                    background-repeat: no-repeat; 
+                                    background-size:cover">
+        <div class="container h-100 ">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-lg-11 col-xl-9">
+                <div class="col-lg-7 col-xl-5">
                     <div class="card text-black" style="border-radius: 25px;">
                         <div class="card-body p-md-5">
                             <div class="row justify-content-center">
-                                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                                <div class="">
 
-                                    <p class="text-center h1 fw-bold mb-2 mx-1 mx-md-3 ">Sign up</p>
+                                    <p class="text-center h1 fw-bold mb-3 mx-2 mx-md-3 ">Sign up</p>
 
                                     <form class="mx-1 mx-md-4">
 
@@ -86,8 +89,8 @@ if (isset($_POST['submit'])) {
                                                 <input class="form-control" type="password" name="confirmpassword" id="confirmpassword" required />
                                             </div>
                                         </div>
-                                        <div class="form-check d-flex justify-content-center mb-3">
-                                                 <a href="Login.php">Já tem uma conta</a>
+                                        <div class="form-check d-flex justify-content-center mb-3" style="padding-right:5%">
+                                            <a href="Login.php">Já tem uma conta</a>
                                         </div>
 
                                         <div class="mx-4 mb-4 mb-lg-1" style="padding-left:30%">
@@ -95,10 +98,6 @@ if (isset($_POST['submit'])) {
                                         </div>
 
                                     </form>
-
-                                </div>
-                                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                                    <img src="imagens/wp10500951.webp" alt="" class="FIT" width="600" height="600">
                                 </div>
                             </div>
                         </div>

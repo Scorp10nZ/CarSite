@@ -1,13 +1,16 @@
+
+
 .FIT{
-	background-attachment: fixed; 
-  	background-size: cover; 
   	background-position: center;
-	height: fit-content;
-    width: 100%;
-    height: 50%;
     border-radius: 10px;
 }
 
+.IMAGEM{
+    background-image: url(../Project01Site/imagens/W.jpg);  
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-size: contain;
+}
 
 .iconLR{
     width: 8%;
