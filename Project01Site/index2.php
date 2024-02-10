@@ -24,40 +24,40 @@ require 'phpconfig/config.php';
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <?php
-            if (isset($_GET['username'])) {
-                if (!$conn) {
-                    die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
-                }
+        if (isset($_GET['username'])) {
+            if (!$conn) {
+                die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
+            }
 
-                $username = mysqli_real_escape_string($conn, $_GET["username"]);
-                $query = "SELECT * FROM cliente WHERE username = '$username'";
-                $result = mysqli_query($conn, $query);
+            $username = mysqli_real_escape_string($conn, $_GET["username"]);
+            $query = "SELECT * FROM cliente WHERE username = '$username'";
+            $result = mysqli_query($conn, $query);
 
-                if (mysqli_num_rows($result) > 0) {
-                    $user = mysqli_fetch_assoc($result);
-            ?>
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">CarDreamer</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
-                    </ul>
-                    <form class="d-flex">
+            if (mysqli_num_rows($result) > 0) {
+                $user = mysqli_fetch_assoc($result);
+        ?>
+                <div class="container px-4 px-lg-5">
+                    <a class="navbar-brand" href="#!">CarDreamer</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                            <li class="nav-item"><a class="nav-link" href="#">Welcome , <strong><?php echo $user['username']?></strong></a></li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         </ul>
-                    </form>
+                        <form class="d-flex">
+                            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                                <li class="nav-item"><a class="nav-link" href="#">Welcome , <strong><?php echo $user['username'] ?></strong></a></li>
+                            </ul>
+                        </form>
+                    </div>
                 </div>
-            </div>
-            <?php
-                    } else {
-                        echo "Usuário não encontrado.";
-                    }
-                } else {
-                    echo "O parâmetro 'username' não foi fornecido na URL.";
-                }
-            ?>
+        <?php
+            } else {
+                echo "Usuário não encontrado.";
+            }
+        } else {
+            echo "O parâmetro 'username' não foi fornecido na URL.";
+        }
+        ?>
     </nav>
     <!-- Header-->
     <header class="bg-dark py-5 BMW " style="background-image: url(imagens/BMW-E60-M5-Rear-View.jpg);">
@@ -77,7 +77,7 @@ require 'phpconfig/config.php';
                 $result = mysqli_query($conn, $query);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
-                 ?>
+                ?>
                         <div class="col mb-5">
                             <form action="index.php?action=add&id=<?php echo $row["id"] ?>" method="post">
                                 <div class="card h-60">
@@ -93,16 +93,18 @@ require 'phpconfig/config.php';
                                     </div>
                                     <!-- Product actions -->
                                     <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                        <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="details.php?id=<?php echo $row["id"]; ?>">More details</a></div>
+                                        <div class="text-center">
+                                            <a class="btn btn-outline-dark mt-auto" href="details.php?id=<?php echo $row["id"]; ?>&username=<?php echo urlencode($_SESSION['username']); ?>">More details</a>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
-                           
+
                         </div>
-                        <?php
-                            }
-                        }          
-                    ?>
+                <?php
+                    }
+                }
+                ?>
             </div>
         </div>
     </section>
@@ -117,4 +119,5 @@ require 'phpconfig/config.php';
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
 </body>
+
 </html>

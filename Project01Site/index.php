@@ -1,6 +1,7 @@
 <?php
 require 'phpconfig/config.php';
 
+
 ?>
 
 <!DOCTYPE html>

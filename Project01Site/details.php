@@ -33,7 +33,11 @@ if (isset($_GET['id'])) {
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index2.php">Home</a></li>
+                            <?php if (isset($_GET['username'])) { ?>
+                                <a class="nav-link active" aria-current="page" href="index2.php?username=<?php echo urlencode($_SESSION['username']); ?>">Home</a>
+                            <?php } else { ?>
+                                <a class="nav-link active" aria-current="page" href="index2.php">Home</a>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -76,9 +80,9 @@ if (isset($_GET['id'])) {
                             $query = "SELECT * FROM carros WHERE id!=$car_id ORDER BY RAND()";
                             $result = mysqli_query($conn, $query);
                             $count = 0;
-                            if (mysqli_num_rows($result) > 0 ) {
+                            if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
-                                    if($count>=4){
+                                    if ($count >= 4) {
                                         break;
                                     }
                             ?>
@@ -104,7 +108,7 @@ if (isset($_GET['id'])) {
 
                                     </div>
                             <?php
-                            $count++;
+                                    $count++;
                                 }
                             }
                             ?>
