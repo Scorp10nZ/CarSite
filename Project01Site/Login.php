@@ -21,6 +21,13 @@ if(isset($_POST["submit"])){
         "<script> alert('Usuario não Registado'); </script>";
     }
 }
+
+function logout(){
+    session_start();
+    session_unset();
+    session_destroy();
+    header("location:Register.php");
+}
 ?>
 
 <!doctype html>

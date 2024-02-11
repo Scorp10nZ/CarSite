@@ -45,7 +45,14 @@ require 'phpconfig/config.php';
                         </ul>
                         <form class="d-flex">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                                <li class="nav-item"><a class="nav-link" href="#">Welcome , <strong><?php echo $user['username'] ?></strong></a></li>
+                                <div class="dropdown">
+                                    <button class="btn btn-xs btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 0.75rem;">
+                                        Welcome , <strong><?php echo $user['username'] ?></strong>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item btn btn-xs text-center" href="logout.php" style="font-size: 0.9rem;">Logout</a></li>
+                                    </ul>
+                                </div>
                             </ul>
                         </form>
                     </div>
