@@ -54,7 +54,7 @@ function logout(){
                     <div class="card text-black" style="border-radius: 25px;">
                         <div class="card-body p-md-8">
                             <div class="row justify-content-center FIT">
-                                <div style="padding-left:15%">
+                                <div style="padding-left:15% ;padding-right:15%">
 
                                     <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
 
