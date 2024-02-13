@@ -48,7 +48,7 @@ require 'phpconfig/config.php';
                 <div class="row">
                     <div class="col-md-6" style="margin-top: 2%;">
                         <h2 style="color: white; padding-left:25%"> <?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h2>
-                        <img class="rounded" style="margin-top: 2% ; width:90%" height="90%" src="imagens/<?php echo $car['imagem']; ?>" />
+                        <img class="rounded" style="margin-top: 2% ; width:90% ;border: 5px groove black" height="90%" src="imagens/<?php echo $car['imagem']; ?>" />
                     </div>
                     <div class="col-md-3" style="margin-top: 5% ;">
                         <div>
@@ -91,7 +91,7 @@ require 'phpconfig/config.php';
                             <div class="col mb-5">
                                 <form action="index.php?action=add&id=<?php echo $row["id"] ?>" method="post">
                                     <div class="card h-60">
-                                        <img class="card-img-top" src="imagens/<?php echo $row['imagem']; ?>" width="300px" height="200px" />
+                                        <img class="card-img-top" style="border: 2px solid black" src="imagens/<?php echo $row['imagem']; ?>" width="300px" height="200px" />
                                         <!-- Product details -->
                                         <div class="card-body p-4">
                                             <div class="text-center">
@@ -103,7 +103,7 @@ require 'phpconfig/config.php';
                                         </div>
                                         <!-- Product actions -->
                                         <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                            <div class="text-center"> <a class="btn btn-outline-dark mt-auto" href="details.php?id=<?php echo $row["id"]; ?><?php if(isset($_GET['username'])) echo '&username=' . urlencode($_GET['username']); ?>">More details</a></div>
+                                            <div class="text-center"> <a class="btn btn-outline-dark mt-auto" href="details.php?id=<?php echo $row["id"]; ?><?php if (isset($_GET['username'])) echo '&username=' . urlencode($_GET['username']); ?>">More details</a></div>
                                         </div>
                                     </div>
                                 </form>

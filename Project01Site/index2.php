@@ -103,7 +103,7 @@ require 'phpconfig/config.php';
                         <div class="col mb-5">
                             <form action="index.php?action=add&id=<?php echo $row["id"] ?>" method="post">
                                 <div class="card h-60">
-                                    <img class="card-img-top" src="imagens/<?php echo $row['imagem']; ?>" width="300px" height="200px" />
+                                    <img class="card-img-top" style="border: 2px solid black" src="imagens/<?php echo $row['imagem']; ?>" width="300px" height="200px" />
                                     <!-- Product details -->
                                     <div class="card-body p-4">
                                         <div class="text-center">
