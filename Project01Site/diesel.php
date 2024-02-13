@@ -12,7 +12,7 @@ require 'phpconfig/config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Shop Homepage - Start Bootstrap Template</title>
+    <title>Carros Diesel</title>
 
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 
@@ -41,22 +41,7 @@ require 'phpconfig/config.php';
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!"><strong>Home</strong></a></li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><strong>Combustiveis</strong></a>
-                                <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="gasolina.php?username=<?php echo urlencode($_SESSION['username']); ?>">Gasolina</a></li>
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="diesel.php?username=<?php echo urlencode($_SESSION['username']); ?>">Diesel</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><strong>Estado</strong></a>
-                                <ul class="dropdown-menu">
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="usados.php?username=<?php echo urlencode($_SESSION['username']); ?>">Usado</a></li>
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="semi_novo.php?username=<?php echo urlencode($_SESSION['username']); ?>">Semi-Novo</a></li>
-                                <li class="nav-item"><a class="nav-link active" aria-current="page" href="novo.php?username=<?php echo urlencode($_SESSION['username']); ?>">Novo</a></li>
-                                </ul>
-                            </li>
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index2.php?username=<?php echo urlencode($_SESSION['username']); ?>">Home</a></li>
                         </ul>
                         <form class="d-flex">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
@@ -95,7 +80,7 @@ require 'phpconfig/config.php';
         <div class="container px-4 px-lg-5 mt-5">
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <?php
-                $query = "SELECT * FROM carros";
+                $query = "SELECT * FROM carros WHERE combustivel='diesel'";
                 $result = mysqli_query($conn, $query);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
