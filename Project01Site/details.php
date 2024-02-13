@@ -57,6 +57,7 @@ require 'phpconfig/config.php';
                                 <h5><strong>Ano:</strong> <?php echo $car['Ano']; ?> </h5>
                                 <h5><strong>Kilometragem:</strong> <?php echo $car['kilometragem']; ?> km</h5>
                                 <h5><strong>Combustivel:</strong> <?php echo $car['combustivel']; ?></h5>
+                                <h5><strong>Estado:</strong> <?php echo $car['Estado']; ?></h5>
                             </div>
                         </div>
                     </div>
@@ -66,6 +67,7 @@ require 'phpconfig/config.php';
                             <h5><strong>Cilindragem:</strong> <?php echo $car['cilindrada']; ?>cc</h5>
                             <h5><strong>Tipo de caixa:</strong> <?php echo $car['tipo_de_caixa']; ?></h5>
                             <h5><strong>Tracção:</strong> <?php echo $car['tracção']; ?></h5>
+                            <h5><strong>Motor:</strong> <?php echo $car['Motor']; ?></h5>
                         </div>
                     </div>
                 </div>
