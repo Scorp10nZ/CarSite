@@ -73,7 +73,29 @@ require 'phpconfig/config.php';
                 </div>
     </div>
     <div style="margin-left: 60%; margin: botton 10%;">
-        <button type="button" class="btn btn-secondary btn-lg">Contatar Vendedor</button>
+                <?php
+                    if (isset($_GET['id'])) {
+                        if (!$conn) {
+                            die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
+                        }
+                    
+                        $car_id = $_GET['id'];
+                        $query = "SELECT id_vendedor FROM carros WHERE id = $car_id";
+                    
+                        $result = mysqli_query($conn, $query);
+                    
+                        if (mysqli_num_rows($result) > 0) {
+                            $car = mysqli_fetch_assoc($result);
+                    
+                            
+                            $vendedor_id = $car["id_vendedor"];
+                ?>
+                <a href="vendedor.php?id=<?php echo $car_id; ?>&id_vendedor=<?php echo $vendedor_id; ?>" class="btn btn-secondary btn-lg">Contatar Vendedor</a>
+                        <?php
+                            } 
+                        } 
+                        ?>
+
     </div>
     <div class="py-3 bg-dark" style="margin-top: 10% ;color:white">
         <h3 class="m-0 text-center">Mais Anuncios</h3>
