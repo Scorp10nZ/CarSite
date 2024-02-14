@@ -13,6 +13,14 @@ require 'phpconfig/config.php';
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
+
+    <style>
+        .table th,
+        .table td {
+            text-align: center;
+        }
+    </style>
+
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
@@ -43,19 +51,27 @@ require 'phpconfig/config.php';
 
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
-                echo "Nome do Vendedor: " . $row["nome_vendedor"] . "<br>";
-                echo "Email do Vendedor: " . $row["email_vendedor"] . "<br>";
-                echo "Telefone do Vendedor: " . $row["telefone"] . "<br>";
-                echo "Morada do Vendedor: " . $row["morada"] . "<br>";
-            } else {
-                echo "Nenhum resultado encontrado para o ID do vendedor fornecido.";
-            }
-        } else {
-            echo "ID do carro e/ou ID do vendedor não fornecidos.";
-        }
-
-
         ?>
+                <div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nome </th>
+                                <th scope="col">Email </th>
+                                <th scope="col">Telefone</th>
+                                <th scope="col">Morada</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><?php echo $row['nome_vendedor'] ?></td>
+                                <td><?php echo $row['email_vendedor'] ?></td>
+                                <td><?php echo $row['telefone'] ?></td>
+                                <td><?php echo $row['morada'] ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
     </main>
     <footer>
@@ -66,5 +82,14 @@ require 'phpconfig/config.php';
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 </body>
+
+<?php
+            } else {
+                echo "Nenhum resultado encontrado para o ID do vendedor fornecido.";
+            }
+        } else {
+            echo "ID do carro e/ou ID do vendedor não fornecidos.";
+        }
+?>
 
 </html>
