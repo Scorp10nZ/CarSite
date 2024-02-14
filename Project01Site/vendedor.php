@@ -21,6 +21,8 @@ require 'phpconfig/config.php';
         }
     </style>
 
+
+
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
 </head>
@@ -71,6 +73,52 @@ require 'phpconfig/config.php';
                             </tr>
                         </tbody>
                     </table>
+                </div>
+
+                <div class="py-3 bg-secondary " style="color:white">
+                    <h3 class="m-0 text-center">Mais Anuncios deste Vendedor</h3>
+                    <section class="py-5">
+                        <div class="container px-4 px-lg-5 mt-5">
+                            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                                <?php
+                                $query = "SELECT * FROM carros WHERE id!=$car_id AND id_vendedor = (SELECT id_vendedor FROM carros WHERE id = $car_id) order by rand()";
+                                $result = mysqli_query($conn, $query);
+                                $count = 0;
+                                if (mysqli_num_rows($result) > 0) {
+                                    while ($row = mysqli_fetch_assoc($result)) {
+                                        if ($count >= 3) {
+                                            break;
+                                        }
+                                ?>
+                                        <div class="col mb-5">
+                                            <form action="index.php?action=add&id=<?php echo $row["id"] ?>" method="post">
+                                                <div class="card h-60">
+                                                    <img class="card-img-top" style="border: 2px solid black" src="imagens/<?php echo $row['imagem']; ?>" width="300px" height="200px" />
+                                                    <!-- Product details -->
+                                                    <div class="card-body p-4">
+                                                        <div class="text-center">
+                                                            <!-- Product name -->
+                                                            <h5 class="fw-bolder"><?php echo $row['Modelo']; ?></h5>
+                                                            <!-- Product price -->
+                                                            <?php echo $row['Preco']; ?>€
+                                                        </div>
+                                                    </div>
+                                                    <!-- Product actions -->
+                                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                                        <div class="text-center"> <a class="btn btn-outline-dark mt-auto" href="details.php?id=<?php echo $row["id"]; ?><?php if (isset($_GET['username'])) echo '&username=' . urlencode($_GET['username']); ?>">More details</a></div>
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+                                <?php
+                                        $count++;
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
+                    </section>
                 </div>
 
     </main>
