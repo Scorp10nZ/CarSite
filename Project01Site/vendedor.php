@@ -74,8 +74,41 @@ require 'phpconfig/config.php';
                         </tbody>
                     </table>
                 </div>
+                <div class="container row">
+                    <div class="col-md-4 offset-md-3" style="padding-bottom:5%">
+                        <?php
+                        if (isset($_GET['id'])) {
+                            if (!$conn) {
+                                die("Erro ao conectar ao banco de dados: " . mysqli_connect_error());
+                            }
 
-                <div class="py-3 bg-secondary " style="color:white">
+                            $car_id = $_GET['id'];
+                            $query = "SELECT * FROM carros WHERE id = $car_id";
+                            $result = mysqli_query($conn, $query);
+
+                            if (mysqli_num_rows($result) > 0) {
+                                $car = mysqli_fetch_assoc($result);
+                        ?>
+                                <img class="rounded" style="margin-top: 2% ; width:90% ;border: 5px groove black" height="90%" src="imagens/<?php echo $car['imagem']; ?>" />
+ 
+                    </div>
+                    <div class="col-md-3 offset-md-1" style="padding-bottom:5%">
+                            <h4><?php echo $car['Marca']; ?> <?php echo $car['Modelo']; ?></h4>
+                            <br>
+                            <br>
+                            <h5><strong>Preço:</strong> <?php echo $car['Preco']; ?>€</h5>
+                            <br>
+                            <br>
+                            <h5><strong>Ano:</strong> <?php echo $car['Ano']; ?> </h5>
+                    </div>
+                    <?php
+                            }
+                        }
+                        ?>
+                </div>
+
+
+                <div class="py-3 bg-secondary " style="color:white;">
                     <h3 class="m-0 text-center">Mais Anuncios deste Vendedor</h3>
                     <section class="py-5">
                         <div class="container px-4 px-lg-5 mt-5">
