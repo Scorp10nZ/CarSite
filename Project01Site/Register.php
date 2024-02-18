@@ -1,7 +1,7 @@
 <?php
 require 'phpconfig/config.php';
 
-if (isset($_POST['submit'])) {
+if (isset($_POST["submit"])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -12,17 +12,17 @@ if (isset($_POST['submit'])) {
         echo "<p>Username or Email já estão a ser usados</p>";
     } else {
         if ($password == $confirmpassword) {
-            $query = "INSERT INTO cliente (username, email, password) VALUES (?, ?, ?)";
-            $stmt = mysqli_prepare($conn, $query);
-            mysqli_stmt_bind_param($stmt, "sss", $username, $email, $password);
-            mysqli_stmt_execute($stmt);
+            
+            $query = "INSERT INTO cliente (username, email, password) VALUES ('$username', '$email', '$password')";
+            mysqli_query($conn, $query);
             echo "<p>Registo com sucesso</p>";
+            header("Location: Login.php");
+            exit(); 
         } else {
             echo "<p>Password não é igual à inserida anteriormente</p>";
         }
     }
 }
-
 ?>
 
 
@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
                                         </div>
 
                                         <div class="mx-4 mb-4 mb-lg-1" style="padding-left:30%">
-                                            <button type="submit" class="btn btn-dark btn-lg">Register</button>
+                                            <button type="submit" class="btn btn-dark btn-lg" name="submit">Register</button>
                                         </div>
 
                                     </form>
