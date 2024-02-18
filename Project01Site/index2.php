@@ -65,6 +65,8 @@ require 'phpconfig/config.php';
                                     </button>
                                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
                                         <li><a class="dropdown-item btn btn-xs text-center" href="logout.php" style="font-size: 0.9rem;">Logout</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li><a class="dropdown-item btn btn-xs text-center" href="perfil.php" style="font-size: 0.9rem;">Perfil</a></li>
                                     </ul>
                                 </div>
                             </ul>
