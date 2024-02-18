@@ -72,7 +72,7 @@
         ?>
     </nav>
     </header>
-    <main  style="background-image: url(../Project01Site/imagens/W.jpg);  
+    <main  style="background-image: url(../Project01Site/imagens/R8.jpg);  
                                     background-position: center; 
                                     background-repeat: no-repeat; 
                                     background-size:cover">

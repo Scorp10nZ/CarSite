@@ -5,23 +5,24 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $confirmpassword = $_POST['password'];
+    $confirmpassword = $_POST['confirmpassword'];
+
     $duplicate = mysqli_query($conn, "SELECT * FROM cliente WHERE username = '$username' OR email = '$email'");
     if (mysqli_num_rows($duplicate) > 0) {
-        echo
-        "<script> alert('Username or Email já estoa a ser usados'); </script>";
+        echo "<p>Username or Email já estão a ser usados</p>";
     } else {
         if ($password == $confirmpassword) {
-            $query = "INSERT INTO cliente VALUES('','$username','$email','$password')";
-            mysqli_query($conn, $query);
-            echo
-            "<script> alert('Registo com sucesso'); </script>";
+            $query = "INSERT INTO cliente (username, email, password) VALUES (?, ?, ?)";
+            $stmt = mysqli_prepare($conn, $query);
+            mysqli_stmt_bind_param($stmt, "sss", $username, $email, $password);
+            mysqli_stmt_execute($stmt);
+            echo "<p>Registo com sucesso</p>";
         } else {
-            echo
-            "<script> alert('Password não é igual a inserida anterioirmente'); </script>";
+            echo "<p>Password não é igual à inserida anteriormente</p>";
         }
     }
 }
+
 ?>
 
 
@@ -55,7 +56,7 @@ if (isset($_POST['submit'])) {
 
                                     <p class="text-center h1 fw-bold mb-3 mx-2 mx-md-3 ">Sign up</p>
 
-                                    <form class="mx-1 mx-md-4">
+                                    <form class="mx-1 mx-md-4" method="post">
 
                                         <div class="d-flex flex-row align-items-center mb-4">
                                             <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -106,6 +107,8 @@ if (isset($_POST['submit'])) {
             </div>
         </div>
     </section>
+
+
 </body>
 
 </html>
